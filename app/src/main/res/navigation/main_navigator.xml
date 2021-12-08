@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigator"
+    app:startDestination="@id/weatherWeekFragment">
+    <fragment
+        android:id="@+id/weatherDayFragment"
+        android:name="com.mirek777.myappweather.WeatherDayFragment"
+        android:label="WeatherFragment"
+        tools:layout="@layout/fragment_weather_day"/>
+    <fragment
+        android:id="@+id/weatherWeekFragment"
+        android:name="com.mirek777.myappweather.WeatherDayFragment"
+        android:label="WeatherFragment"
+        tools:layout="@layout/fragment_weather_week"/>
+    <fragment
+        android:id="@+id/weatherMonthFragment"
+        android:name="com.mirek777.myappweather.WeatherDayFragment"
+        android:label="WeatherFragment"
+        tools:layout="@layout/fragment_weather_month"/>
+</navigation>
