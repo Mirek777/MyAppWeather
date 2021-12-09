@@ -3,20 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigator"
-    app:startDestination="@id/weatherWeekFragment">
+    app:startDestination="@id/weatherDayFragment">
     <fragment
         android:id="@+id/weatherDayFragment"
-        android:name="com.mirek777.myappweather.WeatherDayFragment"
-        android:label="WeatherFragment"
-        tools:layout="@layout/fragment_weather_day"/>
+        android:name="com.mirek777.myappweather.fragments.WeatherDayFragment"
+        android:label="fragment_weather_day"
+        tools:layout="@layout/fragment_weather_day">
+        <action
+            android:id="@+id/action_weatherDayFragment_to_weatherWeekFragment"
+            app:destination="@id/weatherWeekFragment" />
+    </fragment>
     <fragment
         android:id="@+id/weatherWeekFragment"
-        android:name="com.mirek777.myappweather.WeatherDayFragment"
-        android:label="WeatherFragment"
-        tools:layout="@layout/fragment_weather_week"/>
+        android:name="com.mirek777.myappweather.fragments.WeatherWeekFragment"
+        android:label="fragment_weather_week"
+        tools:layout="@layout/fragment_weather_week">
+        <action
+            android:id="@+id/action_weatherWeekFragment_to_weatherMonthFragment"
+            app:destination="@id/weatherMonthFragment" />
+    </fragment>
     <fragment
         android:id="@+id/weatherMonthFragment"
-        android:name="com.mirek777.myappweather.WeatherDayFragment"
-        android:label="WeatherFragment"
+        android:name="com.mirek777.myappweather.fragments.WeatherMonthFragment"
+        android:label="fragment_weather_month"
         tools:layout="@layout/fragment_weather_month"/>
 </navigation>
