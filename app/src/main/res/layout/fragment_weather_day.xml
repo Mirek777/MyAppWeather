@@ -3,20 +3,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="здесь должен быть прогноз погоды на день"
-        android:textSize="50sp">
-    </TextView>
+    <Button
+        android:id="@+id/button_day"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_week"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="день">
+    </Button>
+    <Button
+        android:id="@+id/button_week"
+        app:layout_constraintStart_toEndOf="@+id/button_day"
+        app:layout_constraintTop_toTopOf="@+id/button_day"
+        app:layout_constraintEnd_toStartOf="@+id/button_month"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="неделя">
+    </Button>
     <Button
         android:id="@+id/button_month"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_week"
+        app:layout_constraintTop_toTopOf="@+id/button_day"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="месяц">
     </Button>
+    <TextView
+        android:id="@+id/text_about_day"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="здесь должен быть прогноз погоды на день"
+        android:textSize="50sp"
+        app:layout_constraintTop_toBottomOf="@+id/button_month"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,8 +21,12 @@ class WeatherDayFragment: Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val button = view.findViewById<Button>(R.id.button_month)
-        button?.setOnClickListener {
+        val buttonWeek = view.findViewById<Button>(R.id.button_week)
+        buttonWeek?.setOnClickListener {
+            findNavController().navigate(R.id.weatherWeekFragment, null)
+        }
+        val buttonMonth = view.findViewById<Button>(R.id.button_month)
+        buttonMonth?.setOnClickListener {
             findNavController().navigate(R.id.weatherMonthFragment, null)
         }
     }
