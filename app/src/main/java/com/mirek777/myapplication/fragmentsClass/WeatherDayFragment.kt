@@ -6,22 +6,24 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment.findNavController
 import androidx.navigation.fragment.findNavController
-import com.mirek777.myappweather.R
+import com.mirek777.myapplication.R
 
-class WeatherWeekFragment: Fragment() {
+class WeatherDayFragment: Fragment(){
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_weather_week, container, false)
+        return inflater.inflate(R.layout.fragment_weather_day, container, false)
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val buttonDay = view.findViewById<Button>(R.id.button_day)
-        buttonDay?.setOnClickListener {
-            findNavController().navigate(R.id.weatherDayFragment, null)
+        val buttonWeek = view.findViewById<Button>(R.id.button_week)
+        buttonWeek?.setOnClickListener {
+            findNavController().navigate(R.id.weatherWeekFragment, null)
         }
         val buttonMonth = view.findViewById<Button>(R.id.button_month)
         buttonMonth?.setOnClickListener {
